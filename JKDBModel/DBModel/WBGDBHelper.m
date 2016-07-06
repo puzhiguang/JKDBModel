@@ -8,18 +8,18 @@
 
 #import <objc/runtime.h>
 
-#import "JKDBHelper.h"
+#import "WBGDBHelper.h"
 #import "JKDBModel.h"
 
-@interface JKDBHelper ()
+@interface WBGDBHelper ()
 
 @property (nonatomic, retain) FMDatabaseQueue *dbQueue;
 
 @end
 
-@implementation JKDBHelper
+@implementation WBGDBHelper
 
-static JKDBHelper *_instance = nil;
+static WBGDBHelper *_instance = nil;
 
 + (instancetype)shareInstance
 {
@@ -67,7 +67,7 @@ static JKDBHelper *_instance = nil;
     if (_instance.dbQueue) {
         _instance.dbQueue = nil;
     }
-    _instance.dbQueue = [[FMDatabaseQueue alloc] initWithPath:[JKDBHelper dbPathWithDirectoryName:directoryName]];
+    _instance.dbQueue = [[FMDatabaseQueue alloc] initWithPath:[WBGDBHelper dbPathWithDirectoryName:directoryName]];
     
     int numClasses;
     Class *classes = NULL;
@@ -91,12 +91,12 @@ static JKDBHelper *_instance = nil;
 
 + (id)allocWithZone:(struct _NSZone *)zone
 {
-    return [JKDBHelper shareInstance];
+    return [WBGDBHelper shareInstance];
 }
 
 - (id)copyWithZone:(struct _NSZone *)zone
 {
-    return [JKDBHelper shareInstance];
+    return [WBGDBHelper shareInstance];
 }
 
 #if ! __has_feature(objc_arc)

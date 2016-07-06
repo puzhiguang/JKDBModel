@@ -16,7 +16,7 @@
 		610FA0381B43D42E00CA50C6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 610FA0361B43D42E00CA50C6 /* ViewController.m */; };
 		610FA03E1B43D43B00CA50C6 /* Depart.m in Sources */ = {isa = PBXBuildFile; fileRef = 610FA03B1B43D43B00CA50C6 /* Depart.m */; };
 		610FA03F1B43D43B00CA50C6 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 610FA03D1B43D43B00CA50C6 /* User.m */; };
-		610FA0451B43D44300CA50C6 /* JKDBHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 610FA0421B43D44300CA50C6 /* JKDBHelper.m */; };
+		610FA0451B43D44300CA50C6 /* WBGDBHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 610FA0421B43D44300CA50C6 /* WBGDBHelper.m */; };
 		610FA0461B43D44300CA50C6 /* JKDBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 610FA0441B43D44300CA50C6 /* JKDBModel.m */; };
 		610FA0531B43D44A00CA50C6 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 610FA0491B43D44A00CA50C6 /* FMDatabase.m */; };
 		610FA0541B43D44A00CA50C6 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 610FA04B1B43D44A00CA50C6 /* FMDatabaseAdditions.m */; };
@@ -55,8 +55,8 @@
 		610FA03B1B43D43B00CA50C6 /* Depart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Depart.m; sourceTree = "<group>"; };
 		610FA03C1B43D43B00CA50C6 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		610FA03D1B43D43B00CA50C6 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
-		610FA0411B43D44300CA50C6 /* JKDBHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKDBHelper.h; sourceTree = "<group>"; };
-		610FA0421B43D44300CA50C6 /* JKDBHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKDBHelper.m; sourceTree = "<group>"; };
+		610FA0411B43D44300CA50C6 /* WBGDBHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBGDBHelper.h; sourceTree = "<group>"; };
+		610FA0421B43D44300CA50C6 /* WBGDBHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBGDBHelper.m; sourceTree = "<group>"; };
 		610FA0431B43D44300CA50C6 /* JKDBModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKDBModel.h; sourceTree = "<group>"; };
 		610FA0441B43D44300CA50C6 /* JKDBModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKDBModel.m; sourceTree = "<group>"; };
 		610FA0481B43D44A00CA50C6 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
@@ -181,8 +181,8 @@
 		610FA0401B43D44300CA50C6 /* DBModel */ = {
 			isa = PBXGroup;
 			children = (
-				610FA0411B43D44300CA50C6 /* JKDBHelper.h */,
-				610FA0421B43D44300CA50C6 /* JKDBHelper.m */,
+				610FA0411B43D44300CA50C6 /* WBGDBHelper.h */,
+				610FA0421B43D44300CA50C6 /* WBGDBHelper.m */,
 				610FA0431B43D44300CA50C6 /* JKDBModel.h */,
 				610FA0441B43D44300CA50C6 /* JKDBModel.m */,
 			);
@@ -318,7 +318,7 @@
 				610FA0381B43D42E00CA50C6 /* ViewController.m in Sources */,
 				610FA03E1B43D43B00CA50C6 /* Depart.m in Sources */,
 				610FA0101B43D36F00CA50C6 /* main.m in Sources */,
-				610FA0451B43D44300CA50C6 /* JKDBHelper.m in Sources */,
+				610FA0451B43D44300CA50C6 /* WBGDBHelper.m in Sources */,
 				610FA0541B43D44A00CA50C6 /* FMDatabaseAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

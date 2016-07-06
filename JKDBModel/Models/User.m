@@ -7,7 +7,7 @@
 //
 
 #import "User.h"
-#import "JKDBHelper.h"
+#import "WBGDBHelper.h"
 
 @interface User ()
 

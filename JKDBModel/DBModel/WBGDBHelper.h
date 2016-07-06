@@ -9,11 +9,11 @@
 #import <Foundation/Foundation.h>
 #import "FMDB.h"
 
-@interface JKDBHelper : NSObject
+@interface WBGDBHelper : NSObject
 
 @property (nonatomic, retain, readonly) FMDatabaseQueue *dbQueue;
 
-+ (JKDBHelper *)shareInstance;
++ (WBGDBHelper *)shareInstance;
 
 + (NSString *)dbPath;
 

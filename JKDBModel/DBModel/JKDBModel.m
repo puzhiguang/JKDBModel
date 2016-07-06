@@ -7,7 +7,7 @@
 //  github:https://github.com/Joker-King/JKDBModel
 
 #import "JKDBModel.h"
-#import "JKDBHelper.h"
+#import "WBGDBHelper.h"
 
 #import <objc/runtime.h>
 
@@ -104,7 +104,7 @@
 + (BOOL)isExistInTable
 {
     __block BOOL res = NO;
-    JKDBHelper *jkDB = [JKDBHelper shareInstance];
+    WBGDBHelper *jkDB = [WBGDBHelper shareInstance];
     [jkDB.dbQueue inDatabase:^(FMDatabase *db) {
         NSString *tableName = NSStringFromClass(self.class);
          res = [db tableExists:tableName];
@@ -115,7 +115,7 @@
 /** 获取列名 */
 + (NSArray *)getColumns
 {
-    JKDBHelper *jkDB = [JKDBHelper shareInstance];
+    WBGDBHelper *jkDB = [WBGDBHelper shareInstance];
     NSMutableArray *columns = [NSMutableArray array];
      [jkDB.dbQueue inDatabase:^(FMDatabase *db) {
          NSString *tableName = NSStringFromClass(self.class);
@@ -135,7 +135,7 @@
 + (BOOL)createTable
 {
     __block BOOL res = YES;
-    JKDBHelper *jkDB = [JKDBHelper shareInstance];
+    WBGDBHelper *jkDB = [WBGDBHelper shareInstance];
     [jkDB.dbQueue inTransaction:^(FMDatabase *db, BOOL *rollback) {
         NSString *tableName = NSStringFromClass(self.class);
         NSString *columeAndType = [self.class getColumeAndTypeString];
@@ -266,7 +266,7 @@
     [keyString deleteCharactersInRange:NSMakeRange(keyString.length - 1, 1)];
     [valueString deleteCharactersInRange:NSMakeRange(valueString.length - 1, 1)];
     
-    JKDBHelper *jkDB = [JKDBHelper shareInstance];
+    WBGDBHelper *jkDB = [WBGDBHelper shareInstance];
     __block BOOL res = NO;
     [jkDB.dbQueue inDatabase:^(FMDatabase *db) {
         NSString *sql = [NSString stringWithFormat:@"INSERT INTO %@(%@) VALUES (%@);", tableName, keyString, valueString];
@@ -288,7 +288,7 @@
     }
     
     __block BOOL res = YES;
-    JKDBHelper *jkDB = [JKDBHelper shareInstance];
+    WBGDBHelper *jkDB = [WBGDBHelper shareInstance];
     // 如果要支持事务
     [jkDB.dbQueue inTransaction:^(FMDatabase *db, BOOL *rollback) {
         for (JKDBModel *model in array) {
@@ -329,7 +329,7 @@
 /** 更新单个对象 */
 - (BOOL)update
 {
-    JKDBHelper *jkDB = [JKDBHelper shareInstance];
+    WBGDBHelper *jkDB = [WBGDBHelper shareInstance];
     __block BOOL res = NO;
     [jkDB.dbQueue inDatabase:^(FMDatabase *db) {
         NSString *tableName = NSStringFromClass(self.class);
@@ -371,7 +371,7 @@
         }
     }
     __block BOOL res = YES;
-    JKDBHelper *jkDB = [JKDBHelper shareInstance];
+    WBGDBHelper *jkDB = [WBGDBHelper shareInstance];
     // 如果要支持事务
     [jkDB.dbQueue inTransaction:^(FMDatabase *db, BOOL *rollback) {
         for (JKDBModel *model in array) {
@@ -418,7 +418,7 @@
 /** 删除单个对象 */
 - (BOOL)deleteObject
 {
-    JKDBHelper *jkDB = [JKDBHelper shareInstance];
+    WBGDBHelper *jkDB = [WBGDBHelper shareInstance];
     __block BOOL res = NO;
     [jkDB.dbQueue inDatabase:^(FMDatabase *db) {
         NSString *tableName = NSStringFromClass(self.class);
@@ -443,7 +443,7 @@
     }
     
     __block BOOL res = YES;
-    JKDBHelper *jkDB = [JKDBHelper shareInstance];
+    WBGDBHelper *jkDB = [WBGDBHelper shareInstance];
     // 如果要支持事务
     [jkDB.dbQueue inTransaction:^(FMDatabase *db, BOOL *rollback) {
         for (JKDBModel *model in array) {
@@ -469,7 +469,7 @@
 /** 通过条件删除数据 */
 + (BOOL)deleteObjectsByCriteria:(NSString *)criteria
 {
-    JKDBHelper *jkDB = [JKDBHelper shareInstance];
+    WBGDBHelper *jkDB = [WBGDBHelper shareInstance];
     __block BOOL res = NO;
     [jkDB.dbQueue inDatabase:^(FMDatabase *db) {
         NSString *tableName = NSStringFromClass(self.class);
@@ -494,7 +494,7 @@
 /** 清空表 */
 + (BOOL)clearTable
 {
-    JKDBHelper *jkDB = [JKDBHelper shareInstance];
+    WBGDBHelper *jkDB = [WBGDBHelper shareInstance];
     __block BOOL res = NO;
     [jkDB.dbQueue inDatabase:^(FMDatabase *db) {
         NSString *tableName = NSStringFromClass(self.class);
@@ -509,7 +509,7 @@
 + (NSArray *)findAll
 {
      NSLog(@"jkdb---%s",__func__);
-    JKDBHelper *jkDB = [JKDBHelper shareInstance];
+    WBGDBHelper *jkDB = [WBGDBHelper shareInstance];
     NSMutableArray *users = [NSMutableArray array];
     [jkDB.dbQueue inDatabase:^(FMDatabase *db) {
         NSString *tableName = NSStringFromClass(self.class);
@@ -574,7 +574,7 @@
 /** 通过条件查找数据 */
 + (NSArray *)findByCriteria:(NSString *)criteria
 {
-    JKDBHelper *jkDB = [JKDBHelper shareInstance];
+    WBGDBHelper *jkDB = [WBGDBHelper shareInstance];
     NSMutableArray *users = [NSMutableArray array];
     [jkDB.dbQueue inDatabase:^(FMDatabase *db) {
         NSString *tableName = NSStringFromClass(self.class);
